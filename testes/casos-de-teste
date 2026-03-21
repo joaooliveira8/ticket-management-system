@@ -1,0 +1,294 @@
+# 🧪 Casos de Teste — Helpdesk QA System
+
+---
+
+## 📦 Módulo: Autenticação
+
+---
+
+### 📌 CT-AUTH-001 — Login com credenciais válidas
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-AUTH-001 |
+| **Módulo** | Autenticação |
+| **Perfil** | Usuário / Analista / Administrador |
+| **Prioridade** | Alta |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se um usuário consegue fazer login com credenciais válidas.
+
+**Pré-condição:** Usuário cadastrado no sistema.
+
+**Passos:**
+1. Acessar a página de login
+2. Inserir e-mail válido
+3. Inserir senha correta
+4. Clicar em "Entrar"
+
+**Resultado esperado:**
+- O usuário é redirecionado para a tela inicial
+- O sistema exibe o nome do usuário logado
+
+---
+
+### 📌 CT-AUTH-002 — Login com credenciais inválidas
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-AUTH-002 |
+| **Módulo** | Autenticação |
+| **Perfil** | Usuário / Analista / Administrador |
+| **Prioridade** | Alta |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o sistema bloqueia login com senha incorreta.
+
+**Pré-condição:** Usuário cadastrado no sistema.
+
+**Passos:**
+1. Acessar a página de login
+2. Inserir e-mail válido
+3. Inserir senha incorreta
+4. Clicar em "Entrar"
+
+**Resultado esperado:**
+- O sistema exibe mensagem de erro
+- O usuário não é autenticado
+
+---
+
+## 📦 Módulo: Chamados
+
+---
+
+### 📌 CT-CHAM-001 — Criar chamado com dados válidos
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-CHAM-001 |
+| **Módulo** | Chamados |
+| **Perfil** | Usuário |
+| **Prioridade** | Alta |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se é possível criar um chamado com todos os dados preenchidos corretamente.
+
+**Pré-condição:** Usuário autenticado no sistema.
+
+**Passos:**
+1. Acessar a tela de criação de chamado
+2. Preencher o título
+3. Preencher a descrição
+4. Selecionar a categoria
+5. Clicar em "Criar chamado"
+
+**Resultado esperado:**
+- O chamado é criado com status `Aberto`
+- O sistema exibe mensagem de confirmação
+- O chamado aparece na listagem do usuário
+
+---
+
+### 📌 CT-CHAM-002 — Criar chamado sem título
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-CHAM-002 |
+| **Módulo** | Chamados |
+| **Perfil** | Usuário |
+| **Prioridade** | Alta |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o sistema impede a criação de chamado sem título.
+
+**Pré-condição:** Usuário autenticado no sistema.
+
+**Passos:**
+1. Acessar a tela de criação de chamado
+2. Deixar o campo título em branco
+3. Preencher a descrição
+4. Clicar em "Criar chamado"
+
+**Resultado esperado:**
+- O sistema exibe mensagem de erro indicando que o título é obrigatório
+- O chamado não é criado
+
+---
+
+### 📌 CT-CHAM-003 — Consultar chamados abertos
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-CHAM-003 |
+| **Módulo** | Chamados |
+| **Perfil** | Usuário |
+| **Prioridade** | Média |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o usuário consegue visualizar seus chamados abertos.
+
+**Pré-condição:** Usuário autenticado com ao menos um chamado criado.
+
+**Passos:**
+1. Acessar a tela de listagem de chamados
+2. Filtrar por status "Aberto"
+
+**Resultado esperado:**
+- A listagem exibe apenas os chamados com status `Aberto`
+- Os dados exibidos (título, data, status) estão corretos
+
+---
+
+## 📦 Módulo: Status
+
+---
+
+### 📌 CT-STAT-001 — Atualizar status do chamado
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-STAT-001 |
+| **Módulo** | Status |
+| **Perfil** | Analista |
+| **Prioridade** | Alta |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o analista consegue atualizar o status de um chamado.
+
+**Pré-condição:** Analista autenticado e chamado com status `Aberto` existente.
+
+**Passos:**
+1. Acessar o chamado existente
+2. Alterar o status para "Em andamento"
+3. Confirmar a alteração
+
+**Resultado esperado:**
+- O status do chamado é atualizado para `Em andamento`
+- A data de atualização é registrada
+
+---
+
+### 📌 CT-STAT-002 — Resolver chamado
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-STAT-002 |
+| **Módulo** | Status |
+| **Perfil** | Analista |
+| **Prioridade** | Alta |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o analista consegue marcar um chamado como resolvido.
+
+**Pré-condição:** Analista autenticado e chamado com status `Em andamento`.
+
+**Passos:**
+1. Acessar o chamado em andamento
+2. Alterar o status para "Resolvido"
+3. Confirmar a alteração
+
+**Resultado esperado:**
+- O status é atualizado para `Resolvido`
+- O usuário recebe notificação para confirmar a solução
+
+---
+
+## 📦 Módulo: Comentários
+
+---
+
+### 📌 CT-COM-001 — Adicionar comentário em chamado
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-COM-001 |
+| **Módulo** | Comentários |
+| **Perfil** | Usuário / Analista |
+| **Prioridade** | Média |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se é possível adicionar um comentário em um chamado existente.
+
+**Pré-condição:** Usuário ou analista autenticado e chamado existente.
+
+**Passos:**
+1. Acessar o chamado
+2. Digitar um comentário no campo de texto
+3. Clicar em "Comentar"
+
+**Resultado esperado:**
+- O comentário é exibido no chamado com o nome do autor e data/hora
+
+---
+
+### 📌 CT-COM-002 — Comentar com campo vazio
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-COM-002 |
+| **Módulo** | Comentários |
+| **Perfil** | Usuário / Analista |
+| **Prioridade** | Baixa |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o sistema impede o envio de comentário vazio.
+
+**Pré-condição:** Usuário ou analista autenticado e chamado existente.
+
+**Passos:**
+1. Acessar o chamado
+2. Deixar o campo de comentário em branco
+3. Clicar em "Comentar"
+
+**Resultado esperado:**
+- O sistema exibe mensagem de erro
+- O comentário não é enviado
+
+---
+
+## 📦 Módulo: Administração
+
+---
+
+### 📌 CT-ADM-001 — Criar categoria
+
+| Campo | Detalhe |
+|---|---|
+| **ID** | CT-ADM-001 |
+| **Módulo** | Administração |
+| **Perfil** | Administrador |
+| **Prioridade** | Média |
+| **Status** | ⏳ Pendente |
+
+**Descrição:** Verificar se o administrador consegue criar uma nova categoria.
+
+**Pré-condição:** Administrador autenticado.
+
+**Passos:**
+1. Acessar o painel de administração
+2. Ir em "Categorias"
+3. Clicar em "Nova categoria"
+4. Inserir o nome da categoria
+5. Confirmar
+
+**Resultado esperado:**
+- A nova categoria aparece na listagem
+- A categoria fica disponível para seleção ao criar chamados
+
+---
+
+## 📊 Resumo
+
+| ID | Módulo | Prioridade | Status |
+|---|---|---|---|
+| CT-AUTH-001 | Autenticação | Alta | ⏳ Pendente |
+| CT-AUTH-002 | Autenticação | Alta | ⏳ Pendente |
+| CT-CHAM-001 | Chamados | Alta | ⏳ Pendente |
+| CT-CHAM-002 | Chamados | Alta | ⏳ Pendente |
+| CT-CHAM-003 | Chamados | Média | ⏳ Pendente |
+| CT-STAT-001 | Status | Alta | ⏳ Pendente |
+| CT-STAT-002 | Status | Alta | ⏳ Pendente |
+| CT-COM-001 | Comentários | Média | ⏳ Pendente |
+| CT-COM-002 | Comentários | Baixa | ⏳ Pendente |
+| CT-ADM-001 | Administração | Média | ⏳ Pendente |
