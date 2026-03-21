@@ -72,20 +72,3 @@
 | RF-014, RF-015, RF-016 | Diagrama de Casos de Uso, Diagrama de Classes |
 | RF-017, RF-018, RF-019 | Diagrama de Casos de Uso |
 | RNF-001, RNF-002, RNF-003, RNF-004 | Diagrama de Classes, Diagrama de Atividades |
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# 📋 Requisitos do Sistema
-
-## ✅ Requisitos Funcionais
-
-- O sistema deve permitir que usuários criem chamados  
-- O sistema deve permitir visualizar chamados  
-- O sistema deve permitir atualizar o status do chamado  
-- O sistema deve permitir adicionar comentários  
-
----
-
-## ⚙️ Requisitos Não Funcionais
-
-- O sistema deve ter tempo de resposta rápido  
-- O sistema deve garantir segurança dos dados  
-- O sistema deve ser fácil de usar  
