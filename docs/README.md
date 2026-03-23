@@ -9,6 +9,7 @@ Esta pasta contém a documentação técnica e funcional do Sistema de Gerenciam
 | Arquivo | Descrição |
 |---|---|
 | `requisitos.md` | Requisitos funcionais e não funcionais do sistema |
+| `regras-do-negocio.md` | Regras de negócio que definem o comportamento do sistema |
 
 ---
 
